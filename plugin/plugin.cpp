@@ -51,10 +51,6 @@
   #define MAYA_EXPORT extern "C" MStatus
 #endif
 
-// Julien Keep for debugging
-#include <stdlib.h>
-#include <stdio.h>
-
 // FE Owned IDs 0x0011AE40 - 0x0011AF3F
 const MTypeId gFirstValidNodeID(0x0011AE40);
 // FabricSpliceMayaNode       0x0011AE41
