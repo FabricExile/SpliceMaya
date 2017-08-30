@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+
 // [andrew 20150520] these Qt headers need to be included before X11 due to
 // conflicting #defines
 #if defined(__linux__)
@@ -29,7 +31,6 @@
 #include <stdexcept>
 #include <exception>
 
-#include <string>
 
 #include <math.h>
 #include <float.h>
