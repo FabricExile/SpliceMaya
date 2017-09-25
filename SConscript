@@ -18,9 +18,6 @@ Import(
   'MAYA_VERSION',
   'sharedCapiFlags',
   'ADDITIONAL_FLAGS',
-  'commandsFlags',
-  'astWrapperFlags',
-  'codeCompletionFlags'
   )
 
 env = parentEnv.Clone()
@@ -173,6 +170,12 @@ env.MergeFlags(locals()[uiLibPrefix + 'Flags'])
 env.MergeFlags(sharedCapiFlags)
 env.MergeFlags(spliceFlags)
 env.MergeFlags(ADDITIONAL_FLAGS)
+
+if FABRIC_BUILD_OS == 'Windows':
+  env.Append(CCFLAGS = ['/EHsc'])
+
+# splice flags
+env.Append(CPPDEFINES = ['FECS_STATIC'])
 
 target = 'FabricMaya'
 
