@@ -17,7 +17,6 @@ Import(
   'MAYA_LIB_DIR',
   'MAYA_VERSION',
   'sharedCapiFlags',
-  'spliceFlags',
   'ADDITIONAL_FLAGS',
   'commandsFlags',
   'astWrapperFlags',
@@ -25,6 +24,13 @@ Import(
   )
 
 env = parentEnv.Clone()
+
+if FABRIC_BUILD_OS == 'Windows':
+  msvc_suffix = 'VS%s' % env['MSVC_VERSION'][0:2]
+  Import('spliceFlags_%s' % msvc_suffix)
+  spliceFlags = locals()['spliceFlags_%s' % msvc_suffix]
+else:
+  Import('spliceFlags')
 
 qtMOCBuilder = Builder(
   action = [[os.path.join(MAYA_BIN_DIR, 'moc'), '-o', '$TARGET', '$SOURCE']],
