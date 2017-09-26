@@ -172,7 +172,7 @@ env.MergeFlags(spliceFlags)
 env.MergeFlags(ADDITIONAL_FLAGS)
 
 if FABRIC_BUILD_OS == 'Windows':
-  env.Append(CCFLAGS = ['/EHsc'])
+  env.Append(CCFLAGS = ['/EHa'])
 
 # splice flags
 env.Append(CPPDEFINES = ['FECS_STATIC'])
