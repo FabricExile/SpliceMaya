@@ -74,13 +74,14 @@ if os.path.exists(spliceApiDir.abspath):
       'FABRIC_BUILD_ARCH': os.environ['FABRIC_BUILD_ARCH'],
       'STAGE_DIR': spliceEnv.Dir('.stage'),
       'BOOST_DIR': os.environ['BOOST_DIR'],
+      'BOOST_VERSION': os.environ['BOOST_VERSION'],
     },
     duplicate=0,
     variant_dir = spliceEnv.Dir('.build').Dir('SpliceAPI')
   )
-  
+
   spliceApiDir = spliceEnv.Dir('.build').Dir('SpliceAPI').Dir('.stage').abspath
-  
+
 else:
 
   print( 'The folder "'+spliceApiDir.abspath+'" does not exist. Please see the README.md for build instructions.' )
