@@ -186,8 +186,6 @@ void onSceneLoad(void *userData){
   }
   FabricSpliceEditorWidget::postClearAll();
 
-  FabricDFGBaseInterface::allRestoreFromPersistenceData(mayaGetLastLoadedScene(), &status);
-
   if(getenv("FABRIC_SPLICE_PROFILING") != NULL)
   {
     for(unsigned int i=0;i<FabricSplice::Logging::getNbTimers();i++)
