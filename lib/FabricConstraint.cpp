@@ -82,15 +82,15 @@ MStatus FabricConstraint::initialize()
   eAttr.setConnectable(false);
   addAttribute(rotateOrder);
 
-  x = nAttr.create("translateX", "translateX", MFnNumericData::kDouble, 0.0);
-  nAttr.setWritable(false);
-  nAttr.setReadable(true);
-  y = nAttr.create("translateY", "translateY", MFnNumericData::kDouble, 0.0);
-  nAttr.setWritable(false);
-  nAttr.setReadable(true);
-  z = nAttr.create("translateZ", "translateZ", MFnNumericData::kDouble, 0.0);
-  nAttr.setWritable(false);
-  nAttr.setReadable(true);
+  x = uAttr.create("translateX", "translateX", MFnUnitAttribute::kDistance, 0.0);
+  uAttr.setWritable(false);
+  uAttr.setReadable(true);
+  y = uAttr.create("translateY", "translateY", MFnUnitAttribute::kDistance, 0.0);
+  uAttr.setWritable(false);
+  uAttr.setReadable(true);
+  z = uAttr.create("translateZ", "translateZ", MFnUnitAttribute::kDistance, 0.0);
+  uAttr.setWritable(false);
+  uAttr.setReadable(true);
   translate = nAttr.create("translate", "translate", x, y, z);
   nAttr.setWritable(false);
   nAttr.setReadable(true);
